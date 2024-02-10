@@ -1,12 +1,15 @@
 package com.emmanuelapp.gestiondestock.controller.api;
 
 import com.emmanuelapp.gestiondestock.dto.VentesDto;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.emmanuelapp.gestiondestock.utils.Constants.APP_ROOT;
 import static com.emmanuelapp.gestiondestock.utils.Constants.VENTES_ENDPOINT;
 
+@Api(APP_ROOT + "/ventes")
 public interface VentesApi {
 
     @PostMapping(VENTES_ENDPOINT + "/create")

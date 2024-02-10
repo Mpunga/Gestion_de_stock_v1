@@ -21,10 +21,10 @@ public class CategoryController implements CategoryApi {
         return categoryService.save(categoryDto);
     }
 
-   /* @Override
+    @Override
     public CategoryDto findById(Integer id) {
         return categoryService.findById(id);
-    } */
+    }
 
     @Override
     public CategoryDto findByCodeCategory(String codeCategory) {

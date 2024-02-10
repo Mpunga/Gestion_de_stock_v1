@@ -5,6 +5,7 @@ import com.emmanuelapp.gestiondestock.dto.CommandeClientDto;
 import com.emmanuelapp.gestiondestock.dto.CommandeFournisseurDto;
 import com.emmanuelapp.gestiondestock.dto.LigneCommandeFournisseurDto;
 import com.emmanuelapp.gestiondestock.model.EtatCommande;
+import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +14,7 @@ import java.util.List;
 
 import static com.emmanuelapp.gestiondestock.utils.Constants.*;
 
-
+@Api(APP_ROOT + "/commandeFournisseurs")
 public interface CommandeFournisseurApi {
 
     @PostMapping(COMMANDE_FOURNISSEUR_ENDPOINT)

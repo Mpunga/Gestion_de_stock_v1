@@ -4,6 +4,7 @@ import com.emmanuelapp.gestiondestock.dto.CommandeClientDto;
 import com.emmanuelapp.gestiondestock.dto.LigneCommandeClientDto;
 import com.emmanuelapp.gestiondestock.model.CommandeClient;
 import com.emmanuelapp.gestiondestock.model.EtatCommande;
+import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 import static com.emmanuelapp.gestiondestock.utils.Constants.APP_ROOT;
 
-
+@Api(APP_ROOT + "/commandeClients")
 public interface CommandeClientApi {
 
     @PostMapping(APP_ROOT + "/commandesclients/create")
