@@ -2,10 +2,10 @@ package com.emmanuelapp.gestiondestock.dto;
 
 import com.emmanuelapp.gestiondestock.model.Adresse;
 import com.emmanuelapp.gestiondestock.model.Client;
-import jakarta.persistence.Embedded;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.persistence.Embedded;
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -8,11 +8,11 @@ import com.emmanuelapp.gestiondestock.model.Entreprise;
 import com.emmanuelapp.gestiondestock.repository.EntrepriseRepository;
 import com.emmanuelapp.gestiondestock.services.EntrepriseService;
 import com.emmanuelapp.gestiondestock.validator.EntrepriseValidator;
-import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

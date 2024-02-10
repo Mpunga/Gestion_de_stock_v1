@@ -2,12 +2,12 @@ package com.emmanuelapp.gestiondestock.model;
 import com.emmanuelapp.gestiondestock.model.AbstractEntity;
 import com.emmanuelapp.gestiondestock.model.Adresse;
 import com.emmanuelapp.gestiondestock.model.CommandeFournisseur;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.util.List;
 
 @Data

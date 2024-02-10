@@ -1,12 +1,15 @@
 package com.emmanuelapp.gestiondestock.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import lombok.Data;
+import lombok.*;
 
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.*;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.time.Instant;
 

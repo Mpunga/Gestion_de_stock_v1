@@ -1,8 +1,8 @@
 package com.emmanuelapp.gestiondestock.model;
 
-import jakarta.persistence.*;
 import lombok.*;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
 

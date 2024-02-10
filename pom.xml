@@ -5,16 +5,16 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.11</version>
+        <version>2.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.epc</groupId>s
+    <groupId>com.epc</groupId>
     <artifactId>Gestiondestock</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Gestion de stock</name>
     <description>Gestion de stock</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>11</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -36,8 +36,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -54,42 +55,36 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-test</artifactId>
+                <scope>test</scope>
+            </dependency>
 
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-
-            <plugin>
                 <groupId>com.github.kongchen</groupId>
                 <artifactId>swagger-maven-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.8</version>
                 <configuration>
                     <apiSources>
                         <apiSource>
-                            <springmvc>true</springmvc>
                             <locations>
-                                <location>com.emmanuelapp.gestiondestock.controller</location>
+                                com.emmanuelapp.gestiondestock.controller
                             </locations>
                             <basePath>http://localhost:8081</basePath>
                             <info>
                                 <title>Swagger Api Documentation for gestion de stock application</title>
                                 <version>${project.version}</version>
-                                <!-- use markdown here because I'm using markdown for output,
-                                if you need to use html or other markup language, you need to use your target language,
-                                 and note escape your description for xml -->
+
                                 <description>
                                     Documentation for gestion de stock application
                                 </description>
@@ -101,20 +96,11 @@
                                     <name>Emmanuel mpunga</name>
                                     <url>http://mpunga.com</url>
                                 </contact>
-                                <license>
-                                    <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-                                    <name>Apache 2.0</name>
-                                </license>
                             </info>
-                            <!-- Support classpath or file absolute path here.
-                            1) classpath e.g: "classpath:/markdown.hbs", "classpath:/templates/hello.html"
-                            2) file e.g: "${basedir}/src/main/resources/markdown.hbs",
-                                "${basedir}/src/main/resources/template/hello.html" -->
-                            <templatePath>${basedir}/src/test/resources/strapdown.html.hbs</templatePath>
                             <outputPath>${project.build.directory}</outputPath>
                             <outputFormats>json</outputFormats>
+                            <swaggerApiReader>com.github.kongchen.swagger.docgen.reader.SpringMvcApiReader</swaggerApiReader>
                             <swaggerDirectory>${project.build.directory}</swaggerDirectory>
-                            <swaggerApiReader>com.wordnik.swagger.jaxrs.reader.DefaultJaxrsApiReader</swaggerApiReader>
                         </apiSource>
                     </apiSources>
                 </configuration>
@@ -129,7 +115,6 @@
                 <dependencies>
                 </dependencies>
             </plugin>
-
         </plugins>
     </build>
 
