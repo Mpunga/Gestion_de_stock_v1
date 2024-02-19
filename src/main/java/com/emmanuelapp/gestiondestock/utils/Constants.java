@@ -18,4 +18,6 @@ public interface Constants {
     String UTILISATEUR_ENDPOINT = APP_ROOT + "/utilisateur";
 
     String VENTES_ENDPOINT = APP_ROOT + "/ventes";
+
+    String AUTHENTICATION_ENDPOINT = APP_ROOT + "/auth";
 }
